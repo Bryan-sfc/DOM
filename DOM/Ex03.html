@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <header>
+        <h1>Camisetas</h1>
+    </header>
+    
+    <main>
+        <p>Camiseta Preta - R$50</p>
+        <button id="cam50" onclick="AdicionarCamisetaPreta()">Adicionar</button>
+        
+        <p>Camiseta Branca - R$40</p>
+        <button id="cam40" onclick="AdicionarCamisetaBranca()"">Adicionar</button>
+        
+            <h2>Carrinho</h2>
+
+            <ul id="Carrinho">
+            </ul>
+
+            <p id="total">Total: R$</p>
+    </main>
+</body>
+<script>
+    function AdicionarCamisetaPreta() {
+        let valorCam50 = document.getElementById("cam50");
+
+        let item = document.createElement("li");
+        item.innerText = valorCam50="Camiseta Preta - R$50";
+
+        document.getElementById("Carrinho").appendChild(item);
+
+        let botaoExcluir = document.createElement("button");
+        botaoExcluir.innerText = "Remover item";
+
+        item.appendChild(botaoExcluir);
+        botaoExcluir.onclick = function(){
+            item.remove();
+        }
+    }
+
+    function AdicionarCamisetaBranca(){
+        let valorCam40 = document.getElementById("cam40");
+
+        let item = document.createElement("li");
+        item.innerText = valorCam40="Camiseta Branca - R$40";
+
+        document.getElementById("Carrinho").appendChild(item);
+
+        item.appendChild(botaoExcluir);
+        botaoExcluir.onclick = function(){
+            item.remove();
+        }
+    }
+</script>
+</html>
